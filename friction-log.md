@@ -24,7 +24,7 @@ The favicon conflict is confirmed. A fresh `create-next-app` 16.2.1 scaffold wit
 
 ### Framework
 
-- 🔧 `create-next-app` scaffolds `app/favicon.ico` which immediately conflicts with `unstable_instant` on the root page — the scaffold and the feature ship in the same version but are incompatible out of the box
+- 🔧 `create-next-app` scaffolds `app/favicon.ico` which immediately conflicts with `unstable_instant` on the root page — the scaffold and the feature ship in the same version but are incompatible out of the box → **Filed:** https://github.com/vercel/next.js/issues/91787
 - 🔧 The build error names neither the file nor the fix: *"you have file-based metadata such as icons that depend on dynamic params segments"* — the filename is available in `componentStack` at `dynamic-rendering.js:706` but is discarded
 
 ### DX / Research
@@ -57,4 +57,3 @@ The favicon conflict is confirmed. A fresh `create-next-app` 16.2.1 scaffold wit
   - Error: *"Runtime data such as `cookies()`, `headers()`, `params`, or `searchParams` was accessed inside `generateMetadata` or you have file-based metadata such as icons that depend on dynamic params segments"*
   - No filename, no suggested fix — identical to the error found in the cache components task
   - Fix: remove `app/favicon.ico` or move it to `metadata.icons` in layout
-
